@@ -7,7 +7,7 @@ import { Fragment } from "react";
 
 interface CarDetailsProps {
   isOpen?: boolean;
-  closeModal?: () => void;
+  closeModal: () => void;
   car: CarProps;
 }
 

@@ -4,7 +4,7 @@ import { fuels, yearsOfProduction } from "@/constants";
 
 import { fetchCars } from "@/utils";
 
-export default async function Home({ searchParams }) {
+export default async function Home({ searchParams }: { searchParams: any }) {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
@@ -37,7 +37,7 @@ export default async function Home({ searchParams }) {
           <section>
             <div className="home__cars-wrapper">
               {allCars?.map((car) => (
-                <CarCard car={car} />
+                <CarCard key={car} car={car} />
               ))}
             </div>
             <ShowMore
